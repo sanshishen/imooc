@@ -5,3 +5,20 @@
  * @date    2015-09-07 15:37:52
  * @version 1.0.0
  */
+var express = require('express'),
+	// 端口设置，可以从变量中传入，默认为3000
+	port = process.env.PORT || 3000,
+	mongoose = require('mongoose'),
+	// 加载数据库配置
+	database = require('./server/config/database'),
+	app = express();
+// 连接mongodb
+mongoose.connect(database.url);
+// 设置静态文件目录
+console.log(__dirname);
+app.use(express.static(__dirname + '/public'));
+// 加载路由
+require('./server/routes/router')(app);
+// 监听端口
+app.listen(port);
+console.log('movie site started on port ' + port);
