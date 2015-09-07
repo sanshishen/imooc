@@ -1,0 +1,26 @@
+{
+  "name": "movie_site",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sanshishen/imooc",
+  "authors": [
+    "三尸神 <1327653237@qq.com>"
+  ],
+  "description": "前端框架及类库依赖",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "assets/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.5",
+    "jquery": "1.9.1"
+  }
+}

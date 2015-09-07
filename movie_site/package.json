@@ -1,0 +1,16 @@
+{
+  "name": "movie_site",
+  "version": "1.0.0",
+  "description": "一个简单的基于MEAN的电影网站示例",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "三尸神",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "moment": "^2.10.6",
+    "mongoose": "^4.1.5"
+  }
+}
