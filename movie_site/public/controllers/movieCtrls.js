@@ -5,14 +5,20 @@
  * @date    2015-09-07 21:48:20
  * @version 1.0.0
  */
-angular.module('MovieListModule', []).controller('MovieListCtrl', function($scope){
-	$scope.movies = [{
-		_id: '01',
-		title: '01',
-		poster: ''
-	},{
-		_id: '02',
-		title: '02',
-		poster: ''
-	}];
-});
+angular.module('MovieCtrlModule', []).controller('MovieHomeCtrl', ['$scope', 'MyHttp', 
+	function($scope, MyHttp){
+		MyHttp.get('/index')
+			.success(function(data) {
+				$scope.title = data.title;
+				$scope.movies = data.movies;
+			});
+	}
+]).controller('MovieDetailCtrl', ['$scope', '$stateParams', 'MyHttp', 
+	function($scope, $stateParams, MyHttp){
+		MyHttp.get('/movie/' + $stateParams._id)
+			.success(function(data) {
+				$scope.title = data.title;
+				$scope.movie = data.movie;
+			});
+	}
+])

@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="page-header">
+			<h1>{{title}}</h1>
+			<p class="lead movie-description">重度科幻迷</p>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>电影名称</th>
+					<th>导演</th>
+					<th>国家</th>
+					<!-- <th>上映年份</th> -->
+					<th>录入时间</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="movie in movies">
+					<td>{{movie.title}}</td>
+					<td>{{movie.director}}</td>
+					<td>{{movie.country}}</td>
+					<td>{{movie.year}}</td>
+					<!-- <td>{{movie.createdAt}}</td> -->
+					<td>
+						<div class="button-group">
+							<a ui-sref="movie({_id: movie._id})" class="btn btn-default" role="button">查看</a>
+							<a ui-sref="update({_id: movie._id})" class="btn btn-warnning" role="button">更新</a>
+							<a ui-sref="" class="btn btn-danger" role="button">删除</a>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
