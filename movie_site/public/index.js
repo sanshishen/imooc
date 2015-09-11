@@ -41,6 +41,7 @@ movieApp.config(function($stateProvider, $urlRouterProvider) {
 		})
 		.state('list', {
 			url: '/admin/list',
-			templateUrl: '/views/tpls/list.html'
+			templateUrl: '/views/tpls/list.html',
+			controller: 'MovieListCtrl'
 		})
 });

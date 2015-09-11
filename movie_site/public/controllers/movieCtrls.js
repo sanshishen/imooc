@@ -21,4 +21,12 @@ angular.module('MovieCtrlModule', []).controller('MovieHomeCtrl', ['$scope', 'My
 				$scope.movie = data.movie;
 			});
 	}
+]).controller('MovieListCtrl', ['$scope', 'MyHttp', 
+	function($scope, MyHttp){
+		MyHttp.get('/admin/list')
+			.success(function(data) {
+				$scope.title = data.title;
+				$scope.movies = data.movies;
+			});
+	}
 ])

@@ -40,7 +40,7 @@ module.exports = function(app) {
 	});
 	// 详情页数据
 	app.get('/movie/:_id', function(req, res) {
-		console.log(req.params._id);
+		var _id = req.params._id;
 		res.json({
 			title: '影片详情页',
 			movie: {
@@ -74,8 +74,8 @@ module.exports = function(app) {
 	// 后台列表页
 	app.get('/admin/list', function(req, res) {
 		res.json({
-			title: '',
-			movie: [{
+			title: '后台列表页',
+			movies: [{
 				_id: '01',
 				director: '何塞·帕蒂利亚',
 				country: '美国',
